@@ -1,7 +1,7 @@
 const DiscordStrategy = require('passport-discord').Strategy;
 const passport = require('passport')
 const DiscordUser = require('../database/models/DiscordUser')
-
+const config = require('./config/client.json')
 
 passport.serializeUser((user, done) => {
     done(null, user.id)
@@ -13,9 +13,9 @@ passport.deserializeUser(async (id, done) => {
 })
 
 passport.use(new DiscordStrategy({
-    clientID: process.env.CLIENT_ID,
-    clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: process.env.CLIENT_REDIRECT,
+    clientID: config.CLIENT_ID,
+    clientSecret: config.CLIENT_SECRET,
+    callbackURL: config.CLIENT_REDIRECT,
     scope: ['identify','email','guilds','guilds.join']
 }, async (accessToken, refreshToken, profile, done) => {
     try {

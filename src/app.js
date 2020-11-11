@@ -11,6 +11,7 @@ const db = require('./database/database')
 const path = require('path')
 const mongoose = require('mongoose')
 const cors = require('cors')
+const config = require('./config/client.json')
 
 // MongoDB
 
@@ -56,6 +57,7 @@ app.use('/admin', adminRoute)
 
 app.listen(PORT, () => {
     console.log(`Listening to requests on port ${PORT}`)
+    console.log(config.CLIENT_ID)
 })
 
 app.get('/', (req, res) => {
