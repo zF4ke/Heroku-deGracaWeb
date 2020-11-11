@@ -1,0 +1,67 @@
+<!-- by zF4ke -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Viga&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/pages/app.css">
+    <title>De Graça! • Tudo isso é para você.</title>
+</head>
+<body>
+    <div class="app">
+        <section id="home">
+            <%- include('partials/header') -%>
+            <div class="heroInner">
+                <h1 class="heroInner-title">
+                    Receba seus prêmios e recompensas!
+                </h1>
+                <h2 class="heroInner-subtitle">
+                    Oferemos items grátis no Discord, Steam, EpicStore, Minecraft e muito mais!
+                </h2>
+                <div class="heroInner-buttons">
+                    <a class="heroInner-login" href="/dashboard">
+                        <img src="./images/discord-logo.svg" alt="Discord Logo">
+                        Login
+                    </a>
+                    <a class="heroInner-extra" href="#rewards">
+                        Benefícios
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section id="commands">
+            <div class="commandsInner">
+                <img src="./images/comandos-preview.png" alt="Commands Preview">
+                <div class="commandsInner-text">
+                    <h2 class="commandsInner-title">Escolha o que quer</h2>
+                    <p class="commandsInner-subtitle">Oferecemos comandos para varios serviços na internet para que você sempre tenha a chance de escolher o seu preferido.</p>
+                </div>
+            </div>
+        </section>
+        <section id="rewards">
+            <div class="rewardsInner">
+                <div class="rewardsInner-text">
+                    <h2 class="rewardsInner-title">Entrega garantida</h2>
+                    <p class="rewardsInner-subtitle">Receba o produto no mesmo momento em que digitou o comando e sem esperas!</p>
+                </div>
+                <img src="./images/rewards-preview.png" alt="Rewards Preview">
+            </div>
+        </section>
+        <section id="login">
+            <a class="lastlogin" href="/dashboard">
+                Clique para fazer login!
+            </a>
+        </section>
+        <footer>
+            <p class="copyright">© 2020 Todos os direitos reservados.</p>
+            <p class="credits">Made with ❤️ by zF4ke#8556</p>
+        </footer>
+    </div>
+</body>
+</html>
+
+<!-- by zF4ke -->
