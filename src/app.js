@@ -63,5 +63,5 @@ app.get('/', (req, res) => {
     res.render('home')
     const forwarded = req.headers['x-forwarded-for']
     const ip = forwarded ? forwarded.split(/, /)[0] : req.connection.remoteAddress;
-    console.log(req.ip)
+    console.log("Mano: " + ip)
 })
