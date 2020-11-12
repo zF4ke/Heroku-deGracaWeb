@@ -61,4 +61,6 @@ app.listen(PORT, () => {
 
 app.get('/', (req, res) => {
     res.render('home')
+    const ip = req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
+    console.log(ip)
 })
