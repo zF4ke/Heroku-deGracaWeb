@@ -61,6 +61,7 @@ app.listen(PORT, () => {
 
 app.get('/', (req, res) => {
     res.render('home')
-    const ip = req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
+    const forwarded = req.headers['x-forwarded-for']
+    const ip = forwarded ? forwarded.split(/, /)[0] : req.connection.remoteAddress;
     console.log(req.ip)
 })
