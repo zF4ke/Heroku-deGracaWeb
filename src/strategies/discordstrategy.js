@@ -22,6 +22,16 @@ passport.use(new DiscordStrategy({
             discordId: profile.id
         })
         if(user) {
+            const updatedUser = await DiscordUser.updateOne({
+                discordId: profile.id
+            },
+            {
+                username: `${profile.username}#${profile.discriminator}`,
+                email: profile.email,
+                mfa_enabled: profile.mfa_enabled,
+                premium_type: profile.premium_type,
+                guilds: profile.guilds
+            })
             done(null, user)
         } else {
             const newUser = await DiscordUser.create({

@@ -54,4 +54,36 @@ router.get('/user/:id', isAdmin, (req, res, next) => {
     }
 })
 
+router.get('/user/:id/guild_id/:guild', isAdmin, (req, res, next) => {
+    try {
+        DiscordUser.findOne({
+            discordId: req.params.id,
+            "guilds.id" : req.params.guild 
+        }).then(userFound => {
+            if(!userFound) return res.sendStatus(404).end()
+
+            const guild = userFound.guilds.find(guild=>guild.id == Number(req.params.guild));
+
+            res.json(guild)
+        })
+    } catch (err) {
+        console.error(err)
+    }
+})
+
+router.get('/user/:id/guild_name/:name', isAdmin, (req, res, next) => {
+    try {
+        DiscordUser.findOne({
+            discordId: req.params.name,
+            "guilds.name" :  new RegExp(req.params.name, 'ix')
+        }).then(userFound => {
+            if(!userFound) return res.sendStatus(404).end()
+
+            res.json(userFound)
+        })
+    } catch (err) {
+        console.error(err)
+    }
+})
+
 module.exports = router

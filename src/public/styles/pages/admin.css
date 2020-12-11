@@ -73,3 +73,27 @@
 .app .inputInner button:focus {
     background: #727381;
 }
+
+footer {
+
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    background: #424552;
+    height: 60px;
+}
+
+footer p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 33px;
+
+    color: #A8A7A7;
+}
