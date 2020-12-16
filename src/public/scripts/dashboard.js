@@ -150,7 +150,8 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
 }
 
 function getURL() {
-    return "https://dimagratis.online/degraca-f649";
+    //EncurtarNet return "https://dimagratis.online/degraca-f649";
+    return "https://direct-link.net/187746/recompensa8532";
 }
 
 function enforceMinMax(el){
