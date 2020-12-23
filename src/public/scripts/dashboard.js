@@ -151,7 +151,7 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
 
 function getURL() {
     //EncurtarNet return "https://dimagratis.online/degraca-f649";
-    return "https://direct-link.net/187746/recompensa8532";
+    return "https://link-to.net/187746/recompensa02";
 }
 
 function enforceMinMax(el){
