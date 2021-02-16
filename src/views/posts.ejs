@@ -1,0 +1,97 @@
+<!-- by zF4ke -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Viga&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/pages/posts.css">
+    <title>De Graça! • Tudo isso é para você.</title>
+</head>
+<body>
+    <div class="app">
+        <section id="videos">
+            <%- include('partials/header') -%>
+            <div class="center">
+                <div class="video">
+                    <div class="video-left">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/D1szH7-VBBM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-right">
+                        <h1 class="video-title">
+                            DISCORD NITRO DE GRAÇA - De Graça Online! | SEM CARTÃO DE CRÉDITO
+                        </h1>
+                        <h2 class="video-description">
+                            Video ensinando como obter Discord Nitro de graça sem cartão de crédito.
+                        </h2>
+                        <button class="video-button" onclick="video('youtu.be/D1szH7-VBBM')">Assistir</button>
+                    </div>
+                </div>
+            </div>
+            <div class="center">
+                <div class="video">
+                    <div class="video-left">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/VmZZnkMUFNg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-right">
+                        <h1 class="video-title">
+                            APROVEITE! MVP+ ESTÁ DE GRAÇA NA REDESKY! 🔥 - JokarxD
+                        </h1>
+                        <h2 class="video-description">
+                            Como obter MVP+ na redesky.
+                        </h2>
+                        <button class="video-button" onclick="video('youtu.be/VmZZnkMUFNg')">Assistir</button>
+                    </div>
+                </div>
+            </div>
+            <div class="center">
+                <div class="video">
+                    <div class="video-left">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/YCH5iiWVojQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-right">
+                        <h1 class="video-title">
+                            NITRO, STEAM, VIP NA REDESKY, EPICSTORE, MINECRAFT E BOOST de Graça pelo Discord! | BOT | JokarxD
+                        </h1>
+                        <h2 class="video-description">
+                            Video demonstrando como obter nitro, vip, steam, epicstore, minecraft e boost de graça.
+                        </h2>
+                        <button class="video-button" onclick="video('youtu.be/YCH5iiWVojQ')">Assistir</button>
+                    </div>
+                </div>
+            </div>
+            <div class="center">
+                <div class="video">
+                    <div class="video-left">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/waDR4qkDY8M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-right">
+                        <h1 class="video-title">
+                            NITRO GAMING GRATIS NO DISCORD! - MAIO (05/2020)
+                        </h1>
+                        <h2 class="video-description">
+                            Video simples de como obter nitro de forma gratuita no Discord.
+                        </h2>
+                        <button class="video-button" onclick="video('youtu.be/waDR4qkDY8M')">Assistir</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <p class="copyright">© 2020 Todos os direitos reservados.</p>
+            <p class="credits">Made with ❤️ by zF4ke#8556</p>
+        </footer>
+    </div>
+    <script>
+        function video(link) {
+            var win = window.open(`https://${link}`, '_blank');
+            win.focus();
+        }
+    </script>
+</body>
+</html>
+
+<!-- by zF4ke -->

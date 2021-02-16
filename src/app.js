@@ -21,6 +21,7 @@ db.then(() => console.log('Connected to MongoDB (degracaauth)')).catch(err => co
 // Routes
 const authRoute = require('./routes/auth')
 const dashboardRoute = require('./routes/dashboard')
+const postsRoute = require('./routes/posts')
 
 app.use(cors())
 
@@ -51,6 +52,7 @@ app.use(passport.session())
 // Middleware Routes
 app.use('/auth', authRoute)
 app.use('/dashboard', dashboardRoute)
+app.use('/posts', postsRoute)
 
 /* Private Use */
 const adminRoute = require('./routes/admin')
