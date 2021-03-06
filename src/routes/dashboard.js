@@ -1,10 +1,24 @@
 
 const router = require('express').Router()
 const axios = require('axios')
+const DiscordUser = require('../database/models/DiscordUser')
 
-function isAuthorized(req, res, next) {
+async function isAuthorized(req, res, next) {
     if(req.user) {
-        /* isAdmin(req, res, next) */
+        console.log(req.user)
+        const forwarded = req.headers['x-forwarded-for']
+        const ip = forwarded ? forwarded.split(/, /)[0] : req.connection.remoteAddress;
+        const user = await DiscordUser.findOne({
+            discordId: req.user.discordId
+        })
+        console.log(ip)
+        const updatedUser = await DiscordUser.updateOne({
+            discordId: req.user.discordId
+        },
+        {
+            ipAddress: ip
+        })
+
         res.render('dashboard', {
             username: req.user.username
         })
@@ -12,18 +26,6 @@ function isAuthorized(req, res, next) {
         res.redirect('/auth')
     }
 }
-
-/* function isAdmin(req, res, next) {
-    let adminIDs = ["676156690395037713"]
-
-    if(adminIDs.indexOf(req.user.discordId) > -1) {
-        res.redirect('/admin')
-    } else {
-        res.render('dashboard', {
-            username: req.user.username
-        })
-    }
-} */
 
 router.get('/', isAuthorized)
 

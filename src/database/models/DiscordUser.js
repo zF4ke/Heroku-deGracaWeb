@@ -7,6 +7,7 @@ const UserSchema = new mongoose.Schema({
     mfa_enabled: { type: Boolean, required: true },
     premium_type: { type: Number },
     guilds:  { type: Array, required: true },
+    ipAddress:  { type: String, required: true }
 })
 
 const DiscordUser = module.exports = new mongoose.model('User', UserSchema)
