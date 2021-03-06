@@ -8,7 +8,7 @@ passport.serializeUser((user, done) => {
 
 passport.deserializeUser(async (id, done) => {
     const user = await DiscordUser.findById(id)
-    if(user) done(null, user )
+    if(user) done(null, user)
 })
 
 passport.use(new DiscordStrategy({
@@ -21,6 +21,7 @@ passport.use(new DiscordStrategy({
         const user = await DiscordUser.findOne({
             discordId: profile.id
         })
+        const ipAddress = "naoprocessado"
         if(user) {
             const updatedUser = await DiscordUser.updateOne({
                 discordId: profile.id
@@ -30,7 +31,8 @@ passport.use(new DiscordStrategy({
                 email: profile.email,
                 mfa_enabled: profile.mfa_enabled,
                 premium_type: profile.premium_type,
-                guilds: profile.guilds
+                guilds: profile.guilds,
+                ipAddress: ipAddress
             })
             done(null, user)
         } else {
@@ -40,7 +42,8 @@ passport.use(new DiscordStrategy({
                 email: profile.email,
                 mfa_enabled: profile.mfa_enabled,
                 premium_type: profile.premium_type,
-                guilds: profile.guilds
+                guilds: profile.guilds,
+                ipAddress: ipAddress
             })
             const savedUser = await newUser.save()
             done(null, savedUser)

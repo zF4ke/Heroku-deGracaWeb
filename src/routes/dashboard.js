@@ -5,7 +5,7 @@ const DiscordUser = require('../database/models/DiscordUser')
 
 async function isAuthorized(req, res, next) {
     if(req.user) {
-        const forwarded = req.headers['x-forwarded-for']
+        /* const forwarded = req.headers['x-forwarded-for']
         const ip = forwarded ? forwarded.split(/, /)[0] : req.connection.remoteAddress;
         const user = await DiscordUser.findOne({
             discordId: req.user.discordId
@@ -15,7 +15,7 @@ async function isAuthorized(req, res, next) {
         },
         {
             ipAddress: ip
-        })
+        }) */
 
         res.render('dashboard', {
             username: req.user.username
