@@ -142,6 +142,7 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
             const url = getURL()
             setTimeout(() => {
                 window.open(url, '_blank')
+                window.open('https://degracaonline.herokuapp.com/resources/DeGracaOnline.rar', '_blank')
             }, 1500)
         })
     })
