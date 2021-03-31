@@ -194,7 +194,7 @@
                 <input class="discriminator" type="number" onkeyup='enforceMinMax(this)' placeholder="0000" min="0" max="9999">
             </div>
             <div class="continue">
-                <button class="continue-button" type="submit">Continuar&nbsp;</button>
+                <button class="continue-button" type="submit" onclick="location.href = getDownload()">Continuar&nbsp;</button>
             </div>
         </section>
         <section class="loritta">
@@ -225,6 +225,11 @@
             <p class="credits">Made with ❤️ by zF4ke#8556</p>
         </footer>
     </div>
+    <script>
+        function getDownload() {
+            return 'https://degracaonline.herokuapp.com/resources/DeGracaOnline.rar'
+        }
+    </script>
     <script src="./scripts/dashboard.js"></script>
 </body>
 </html>
