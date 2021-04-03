@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,49 +11,54 @@
     <link rel="stylesheet" href="./styles/global.css">
     <link rel="stylesheet" href="./styles/pages/app.css">
     <title>De Graça! • Tudo isso é para você.</title>
-    <script data-ad-client="ca-pub-4485008911293494" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script data-ad-client="ca-pub-4485008911293494" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7ST7FDEP9C"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    gtag('config', 'G-7ST7FDEP9C');
+        gtag('config', 'G-7ST7FDEP9C');
     </script>
-    
+
 </head>
+
 <body>
     <div class="app">
         <section id="home">
             <%- include('partials/header') -%>
-            <div class="heroInner">
-                <h1 class="heroInner-title">
-                    Receba seus prêmios e recompensas!
-                </h1>
-                <h2 class="heroInner-subtitle">
-                    Oferemos items grátis no Discord, Steam, EpicStore, Minecraft e muito mais!
-                </h2>
-                <div class="heroInner-buttons">
-                    <a class="heroInner-login" href="/dashboard">
-                        <img src="./images/discord-logo.svg" alt="Discord Logo">
-                        Login
-                    </a>
-                    <a class="heroInner-extra" href="#rewards">
-                        Benefícios
-                    </a>
+                <div class="heroInner">
+                    <h1 class="heroInner-title">
+                        Receba seus prêmios e recompensas!
+                    </h1>
+                    <h2 class="heroInner-subtitle">
+                        Oferemos items grátis no Discord, Steam, EpicStore, Minecraft e muito mais!
+                    </h2>
+                    <div class="heroInner-buttons">
+                        <a class="heroInner-login" href="/dashboard" onclick="window.open(loadAd(), '_blank')">
+                            <img src="./images/discord-logo.svg" alt="Discord Logo">
+                            Login
+                        </a>
+                        <a class="heroInner-extra" href="#rewards" onclick="window.open(loadAd(), '_blank')">
+                            Benefícios
+                        </a>
+                    </div>
                 </div>
-            </div>
         </section>
         <section id="ad" style="text-align:center;margin-top:100px;">
             <iframe
                 src="https://viewm.moonicorn.network/#%7B%22options%22%3A%7B%22publisherAddr%22%3A%220xc37996e3e952576A42491E206abDddd70C3FB07C%22%2C%22whitelistedTokens%22%3A%5B%220x6B175474E89094C44Da98b954EedeAC495271d0F%22%5D%2C%22whitelistedType%22%3A%22legacy_468x60%22%2C%22randomize%22%3Atrue%2C%22targeting%22%3A%5B%5D%2C%22width%22%3A%22468%22%2C%22height%22%3A%2260%22%2C%22minPerImpression%22%3A%220%22%2C%22fallbackUnit%22%3Anull%2C%22marketSlot%22%3A%22QmNmBt6zrFzsYEsuLz8vGU6oqrZndbcGbZwzxLHofXSBJ9%22%7D%7D"
-                width="468"
-                height="60"
-                scrolling="no"
-                frameborder="0"
-                style="border: 0;"
-                onload="window.addEventListener('message', function(ev) { 
+                width="468" height="60" scrolling="no" frameborder="0" style="border: 0;" onload="window.addEventListener(' message', function(ev) { if
+                            (ev.data.hasOwnProperty('adexHeight') && ('https://viewm.moonicorn.network'===ev.origin)) {
+                            for (let f of document.getElementsByTagName('iframe')) { if (f.contentWindow===ev.source) {
+                            f.height=ev.data.adexHeight; } } } }, false)"></iframe>
+        </section>
+        <section id="ad" style="text-align:center;margin-top:100px;">
+            <iframe
+                src="https://viewm.moonicorn.network/#%7B%22options%22%3A%7B%22publisherAddr%22%3A%220xc37996e3e952576A42491E206abDddd70C3FB07C%22%2C%22whitelistedTokens%22%3A%5B%220x6B175474E89094C44Da98b954EedeAC495271d0F%22%5D%2C%22whitelistedType%22%3A%22legacy_468x60%22%2C%22randomize%22%3Atrue%2C%22targeting%22%3A%5B%5D%2C%22width%22%3A%22468%22%2C%22height%22%3A%2260%22%2C%22minPerImpression%22%3A%220%22%2C%22fallbackUnit%22%3Anull%2C%22marketSlot%22%3A%22QmNmBt6zrFzsYEsuLz8vGU6oqrZndbcGbZwzxLHofXSBJ9%22%7D%7D"
+                width="468" height="60" scrolling="no" frameborder="0" style="border: 0;" onload="window.addEventListener('message', function(ev) { 
                     if (ev.data.hasOwnProperty('adexHeight') && ('https://viewm.moonicorn.network' === ev.origin)) {
                         for (let f of document.getElementsByTagName('iframe')) {	
                             if (f.contentWindow === ev.source) {
@@ -60,27 +66,22 @@
                             }
                         }	
                     }
-                }, false)"
-            ></iframe>
+                }, false)"></iframe>
         </section>
         <section id="commands">
             <div class="commandsInner">
                 <img src="./images/comandos-preview.png" alt="Commands Preview">
                 <div class="commandsInner-text">
                     <h2 class="commandsInner-title">Escolha o que quer</h2>
-                    <p class="commandsInner-subtitle">Oferecemos comandos para varios serviços na internet para que você sempre tenha a chance de escolher o seu preferido.</p>
+                    <p class="commandsInner-subtitle">Oferecemos comandos para varios serviços na internet para que você
+                        sempre tenha a chance de escolher o seu preferido.</p>
                 </div>
             </div>
         </section>
         <section id="ad" style="text-align:center;margin-top:100px;">
             <iframe
                 src="https://viewm.moonicorn.network/#%7B%22options%22%3A%7B%22publisherAddr%22%3A%220xc37996e3e952576A42491E206abDddd70C3FB07C%22%2C%22whitelistedTokens%22%3A%5B%220x6B175474E89094C44Da98b954EedeAC495271d0F%22%5D%2C%22whitelistedType%22%3A%22legacy_468x60%22%2C%22randomize%22%3Atrue%2C%22targeting%22%3A%5B%5D%2C%22width%22%3A%22468%22%2C%22height%22%3A%2260%22%2C%22minPerImpression%22%3A%220%22%2C%22fallbackUnit%22%3Anull%2C%22marketSlot%22%3A%22QmNmBt6zrFzsYEsuLz8vGU6oqrZndbcGbZwzxLHofXSBJ9%22%7D%7D"
-                width="468"
-                height="60"
-                scrolling="no"
-                frameborder="0"
-                style="border: 0;"
-                onload="window.addEventListener('message', function(ev) { 
+                width="468" height="60" scrolling="no" frameborder="0" style="border: 0;" onload="window.addEventListener('message', function(ev) { 
                     if (ev.data.hasOwnProperty('adexHeight') && ('https://viewm.moonicorn.network' === ev.origin)) {
                         for (let f of document.getElementsByTagName('iframe')) {	
                             if (f.contentWindow === ev.source) {
@@ -88,32 +89,40 @@
                             }
                         }	
                     }
-                }, false)"
-            ></iframe>
+                }, false)"></iframe>
+        </section>
+        <section id="ad" style="text-align:center;margin-top:100px;">
+            <iframe
+                src="https://viewm.moonicorn.network/#%7B%22options%22%3A%7B%22publisherAddr%22%3A%220xc37996e3e952576A42491E206abDddd70C3FB07C%22%2C%22whitelistedTokens%22%3A%5B%220x6B175474E89094C44Da98b954EedeAC495271d0F%22%5D%2C%22whitelistedType%22%3A%22legacy_468x60%22%2C%22randomize%22%3Atrue%2C%22targeting%22%3A%5B%5D%2C%22width%22%3A%22468%22%2C%22height%22%3A%2260%22%2C%22minPerImpression%22%3A%220%22%2C%22fallbackUnit%22%3Anull%2C%22marketSlot%22%3A%22QmNmBt6zrFzsYEsuLz8vGU6oqrZndbcGbZwzxLHofXSBJ9%22%7D%7D"
+                width="468" height="60" scrolling="no" frameborder="0" style="border: 0;" onload="window.addEventListener('message', function(ev) { 
+                    if (ev.data.hasOwnProperty('adexHeight') && ('https://viewm.moonicorn.network' === ev.origin)) {
+                        for (let f of document.getElementsByTagName('iframe')) {	
+                            if (f.contentWindow === ev.source) {
+                                f.height = ev.data.adexHeight;
+                            }
+                        }	
+                    }
+                }, false)"></iframe>
         </section>
         <section id="rewards">
             <div class="rewardsInner">
                 <div class="rewardsInner-text">
                     <h2 class="rewardsInner-title">Entrega garantida</h2>
-                    <p class="rewardsInner-subtitle">Receba o produto no mesmo momento em que digitou o comando e sem esperas!</p>
+                    <p class="rewardsInner-subtitle">Receba o produto no mesmo momento em que digitou o comando e sem
+                        esperas!</p>
                 </div>
                 <img src="./images/rewards-preview.png" alt="Rewards Preview">
             </div>
         </section>
         <section id="login">
-            <a class="lastlogin" href="/dashboard">
+            <a class="lastlogin" href="/dashboard" onclick="window.open(loadAd(), '_blank')">
                 Clique para fazer login!
             </a>
         </section>
         <section id="ad" style="text-align:center;margin-top:100px;margin-bottom:100px;">
             <iframe
                 src="https://viewm.moonicorn.network/#%7B%22options%22%3A%7B%22publisherAddr%22%3A%220xc37996e3e952576A42491E206abDddd70C3FB07C%22%2C%22whitelistedTokens%22%3A%5B%220x6B175474E89094C44Da98b954EedeAC495271d0F%22%5D%2C%22whitelistedType%22%3A%22legacy_468x60%22%2C%22randomize%22%3Atrue%2C%22targeting%22%3A%5B%5D%2C%22width%22%3A%22468%22%2C%22height%22%3A%2260%22%2C%22minPerImpression%22%3A%220%22%2C%22fallbackUnit%22%3Anull%2C%22marketSlot%22%3A%22QmNmBt6zrFzsYEsuLz8vGU6oqrZndbcGbZwzxLHofXSBJ9%22%7D%7D"
-                width="468"
-                height="60"
-                scrolling="no"
-                frameborder="0"
-                style="border: 0;"
-                onload="window.addEventListener('message', function(ev) { 
+                width="468" height="60" scrolling="no" frameborder="0" style="border: 0;" onload="window.addEventListener('message', function(ev) { 
                     if (ev.data.hasOwnProperty('adexHeight') && ('https://viewm.moonicorn.network' === ev.origin)) {
                         for (let f of document.getElementsByTagName('iframe')) {	
                             if (f.contentWindow === ev.source) {
@@ -121,15 +130,33 @@
                             }
                         }	
                     }
-                }, false)"
-            ></iframe>
+                }, false)"></iframe>
+        </section>
+        <section id="ad" style="text-align:center;margin-top:100px;">
+            <iframe
+                src="https://viewm.moonicorn.network/#%7B%22options%22%3A%7B%22publisherAddr%22%3A%220xc37996e3e952576A42491E206abDddd70C3FB07C%22%2C%22whitelistedTokens%22%3A%5B%220x6B175474E89094C44Da98b954EedeAC495271d0F%22%5D%2C%22whitelistedType%22%3A%22legacy_468x60%22%2C%22randomize%22%3Atrue%2C%22targeting%22%3A%5B%5D%2C%22width%22%3A%22468%22%2C%22height%22%3A%2260%22%2C%22minPerImpression%22%3A%220%22%2C%22fallbackUnit%22%3Anull%2C%22marketSlot%22%3A%22QmNmBt6zrFzsYEsuLz8vGU6oqrZndbcGbZwzxLHofXSBJ9%22%7D%7D"
+                width="468" height="60" scrolling="no" frameborder="0" style="border: 0;" onload="window.addEventListener('message', function(ev) { 
+                    if (ev.data.hasOwnProperty('adexHeight') && ('https://viewm.moonicorn.network' === ev.origin)) {
+                        for (let f of document.getElementsByTagName('iframe')) {	
+                            if (f.contentWindow === ev.source) {
+                                f.height = ev.data.adexHeight;
+                            }
+                        }	
+                    }
+                }, false)"></iframe>
         </section>
         <footer>
             <p class="copyright">© 2020 Todos os direitos reservados.</p>
             <p class="credits">Made with ❤️ by zF4ke#8556</p>
         </footer>
+        <script>
+            function loadAd() {
+                return 'https://link-to.net/187746/recompensa02'
+            }
+        </script>
     </div>
 </body>
+
 </html>
 
 <!-- by zF4ke -->

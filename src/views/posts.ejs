@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,17 +12,13 @@
     <link rel="stylesheet" href="./styles/pages/posts.css">
     <title>De Graça! • Tudo isso é para você.</title>
 </head>
+
 <body>
     <div class="app">
         <section id="ad" style="text-align:center;margin-top:100px;">
             <iframe
                 src="https://viewm.moonicorn.network/#%7B%22options%22%3A%7B%22publisherAddr%22%3A%220xc37996e3e952576A42491E206abDddd70C3FB07C%22%2C%22whitelistedTokens%22%3A%5B%220x6B175474E89094C44Da98b954EedeAC495271d0F%22%5D%2C%22whitelistedType%22%3A%22legacy_468x60%22%2C%22randomize%22%3Atrue%2C%22targeting%22%3A%5B%5D%2C%22width%22%3A%22468%22%2C%22height%22%3A%2260%22%2C%22minPerImpression%22%3A%220%22%2C%22fallbackUnit%22%3Anull%2C%22marketSlot%22%3A%22QmNmBt6zrFzsYEsuLz8vGU6oqrZndbcGbZwzxLHofXSBJ9%22%7D%7D"
-                width="468"
-                height="60"
-                scrolling="no"
-                frameborder="0"
-                style="border: 0;"
-                onload="window.addEventListener('message', function(ev) { 
+                width="468" height="60" scrolling="no" frameborder="0" style="border: 0;" onload="window.addEventListener('message', function(ev) { 
                     if (ev.data.hasOwnProperty('adexHeight') && ('https://viewm.moonicorn.network' === ev.origin)) {
                         for (let f of document.getElementsByTagName('iframe')) {	
                             if (f.contentWindow === ev.source) {
@@ -29,53 +26,65 @@
                             }
                         }	
                     }
-                }, false)"
-            ></iframe>
+                }, false)"></iframe>
+        </section>
+        <section id="ad" style="text-align:center;margin-top:100px;">
+            <iframe
+                src="https://viewm.moonicorn.network/#%7B%22options%22%3A%7B%22publisherAddr%22%3A%220xc37996e3e952576A42491E206abDddd70C3FB07C%22%2C%22whitelistedTokens%22%3A%5B%220x6B175474E89094C44Da98b954EedeAC495271d0F%22%5D%2C%22whitelistedType%22%3A%22legacy_468x60%22%2C%22randomize%22%3Atrue%2C%22targeting%22%3A%5B%5D%2C%22width%22%3A%22468%22%2C%22height%22%3A%2260%22%2C%22minPerImpression%22%3A%220%22%2C%22fallbackUnit%22%3Anull%2C%22marketSlot%22%3A%22QmNmBt6zrFzsYEsuLz8vGU6oqrZndbcGbZwzxLHofXSBJ9%22%7D%7D"
+                width="468" height="60" scrolling="no" frameborder="0" style="border: 0;" onload="window.addEventListener('message', function(ev) { 
+                    if (ev.data.hasOwnProperty('adexHeight') && ('https://viewm.moonicorn.network' === ev.origin)) {
+                        for (let f of document.getElementsByTagName('iframe')) {	
+                            if (f.contentWindow === ev.source) {
+                                f.height = ev.data.adexHeight;
+                            }
+                        }	
+                    }
+                }, false)"></iframe>
         </section>
         <section id="videos">
             <%- include('partials/header') -%>
-            <div class="center">
-                <div class="post">
-                    <div class="post-image">
-                        <img src="https://ibcdn.canaltech.com.br/MLQ2LNj7iwgzffSPsdripesDsRc=/81x0:1199x630/1118x629/smart/i368567.png">
-                    </div>
-                    <div class="post-body">
-                        <h1 class="post-title">
-                            Precisar de ajuda para usar o Discord? Vamos explicar tudo aqui!
-                        </h1>
-                        <h2 class="post-description">
-                            Vindo a expandir-se cada vez mais, o Discord é um dos maiores locais na internet de chat para gamers..
-                        </h2>
-                        
-                        <button class="post-button" onclick="">Ler</button>
-                    </div>
-                </div>
-            </div>
-            <div class="center">
-                <div class="post">
-                    <div class="video-left">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/VmZZnkMUFNg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-right">
-                        <h1 class="video-title">
-                            APROVEITE! MVP+ ESTÁ DE GRAÇA NA REDESKY! 🔥 - JokarxD
-                        </h1>
-                        <h2 class="video-description">
-                            Como obter MVP+ na redesky.
-                        </h2>
-                        <button class="video-button" onclick="video('youtu.be/VmZZnkMUFNg')">Assistir</button>
+                <div class="center">
+                    <div class="post">
+                        <div class="post-image">
+                            <img
+                                src="https://ibcdn.canaltech.com.br/MLQ2LNj7iwgzffSPsdripesDsRc=/81x0:1199x630/1118x629/smart/i368567.png">
+                        </div>
+                        <div class="post-body">
+                            <h1 class="post-title">
+                                Precisar de ajuda para usar o Discord? Vamos explicar tudo aqui!
+                            </h1>
+                            <h2 class="post-description">
+                                Vindo a expandir-se cada vez mais, o Discord é um dos maiores locais na internet de chat
+                                para gamers..
+                            </h2>
+
+                            <button class="post-button" onclick="">Ler</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <section id="ad" style="text-align:center;margin-top:100px;margin-bottom:100px;">
-                <iframe
-                    src="https://viewm.moonicorn.network/#%7B%22options%22%3A%7B%22publisherAddr%22%3A%220xc37996e3e952576A42491E206abDddd70C3FB07C%22%2C%22whitelistedTokens%22%3A%5B%220x6B175474E89094C44Da98b954EedeAC495271d0F%22%5D%2C%22whitelistedType%22%3A%22legacy_468x60%22%2C%22randomize%22%3Atrue%2C%22targeting%22%3A%5B%5D%2C%22width%22%3A%22468%22%2C%22height%22%3A%2260%22%2C%22minPerImpression%22%3A%220%22%2C%22fallbackUnit%22%3Anull%2C%22marketSlot%22%3A%22QmNmBt6zrFzsYEsuLz8vGU6oqrZndbcGbZwzxLHofXSBJ9%22%7D%7D"
-                    width="468"
-                    height="60"
-                    scrolling="no"
-                    frameborder="0"
-                    style="border: 0;"
-                    onload="window.addEventListener('message', function(ev) { 
+                <div class="center">
+                    <div class="post">
+                        <div class="video-left">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/VmZZnkMUFNg"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="video-right">
+                            <h1 class="video-title">
+                                APROVEITE! MVP+ ESTÁ DE GRAÇA NA REDESKY! 🔥 - JokarxD
+                            </h1>
+                            <h2 class="video-description">
+                                Como obter MVP+ na redesky.
+                            </h2>
+                            <button class="video-button" onclick="video('youtu.be/VmZZnkMUFNg')">Assistir</button>
+                        </div>
+                    </div>
+                </div>
+                <section id="ad" style="text-align:center;margin-top:100px;margin-bottom:100px;">
+                    <iframe
+                        src="https://viewm.moonicorn.network/#%7B%22options%22%3A%7B%22publisherAddr%22%3A%220xc37996e3e952576A42491E206abDddd70C3FB07C%22%2C%22whitelistedTokens%22%3A%5B%220x6B175474E89094C44Da98b954EedeAC495271d0F%22%5D%2C%22whitelistedType%22%3A%22legacy_468x60%22%2C%22randomize%22%3Atrue%2C%22targeting%22%3A%5B%5D%2C%22width%22%3A%22468%22%2C%22height%22%3A%2260%22%2C%22minPerImpression%22%3A%220%22%2C%22fallbackUnit%22%3Anull%2C%22marketSlot%22%3A%22QmNmBt6zrFzsYEsuLz8vGU6oqrZndbcGbZwzxLHofXSBJ9%22%7D%7D"
+                        width="468" height="60" scrolling="no" frameborder="0" style="border: 0;" onload="window.addEventListener('message', function(ev) { 
                         if (ev.data.hasOwnProperty('adexHeight') && ('https://viewm.moonicorn.network' === ev.origin)) {
                             for (let f of document.getElementsByTagName('iframe')) {	
                                 if (f.contentWindow === ev.source) {
@@ -83,51 +92,52 @@
                                 }
                             }	
                         }
-                    }, false)"
-                ></iframe>
-            </section>
-            <div class="center">
-                <div class="post">
-                    <div class="video-left">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/YCH5iiWVojQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-right">
-                        <h1 class="video-title">
-                            NITRO, STEAM, VIP NA REDESKY, EPICSTORE, MINECRAFT E BOOST de Graça pelo Discord! | BOT | JokarxD
-                        </h1>
-                        <h2 class="video-description">
-                            Video demonstrando como obter nitro, vip, steam, epicstore, minecraft e boost de graça.
-                        </h2>
-                        <button class="video-button" onclick="video('youtu.be/YCH5iiWVojQ')">Assistir</button>
-                    </div>
-                </div>
-            </div>
-            <div class="center">
-                <div class="post">
-                    <div class="video-left">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/waDR4qkDY8M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-right">
-                        <h1 class="video-title">
-                            NITRO GAMING GRATIS NO DISCORD! - MAIO (05/2020)
-                        </h1>
-                        <h2 class="video-description">
-                            Video simples de como obter nitro de forma gratuita no Discord.
-                        </h2>
-                        <button class="video-button" onclick="video('youtu.be/waDR4qkDY8M')">Assistir</button>
+                    }, false)"></iframe>
+                </section>
+                <div class="center">
+                    <div class="post">
+                        <div class="video-left">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/YCH5iiWVojQ"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="video-right">
+                            <h1 class="video-title">
+                                NITRO, STEAM, VIP NA REDESKY, EPICSTORE, MINECRAFT E BOOST de Graça pelo Discord! | BOT
+                                | JokarxD
+                            </h1>
+                            <h2 class="video-description">
+                                Video demonstrando como obter nitro, vip, steam, epicstore, minecraft e boost de graça.
+                            </h2>
+                            <button class="video-button" onclick="video('youtu.be/YCH5iiWVojQ')">Assistir</button>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div class="center">
+                    <div class="post">
+                        <div class="video-left">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/waDR4qkDY8M"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="video-right">
+                            <h1 class="video-title">
+                                NITRO GAMING GRATIS NO DISCORD! - MAIO (05/2020)
+                            </h1>
+                            <h2 class="video-description">
+                                Video simples de como obter nitro de forma gratuita no Discord.
+                            </h2>
+                            <button class="video-button" onclick="video('youtu.be/waDR4qkDY8M')">Assistir</button>
+                        </div>
+                    </div>
+                </div>
         </section>
         <section id="ad" style="text-align:center;margin-top:100px;margin-bottom:100px;">
             <iframe
                 src="https://viewm.moonicorn.network/#%7B%22options%22%3A%7B%22publisherAddr%22%3A%220xc37996e3e952576A42491E206abDddd70C3FB07C%22%2C%22whitelistedTokens%22%3A%5B%220x6B175474E89094C44Da98b954EedeAC495271d0F%22%5D%2C%22whitelistedType%22%3A%22legacy_468x60%22%2C%22randomize%22%3Atrue%2C%22targeting%22%3A%5B%5D%2C%22width%22%3A%22468%22%2C%22height%22%3A%2260%22%2C%22minPerImpression%22%3A%220%22%2C%22fallbackUnit%22%3Anull%2C%22marketSlot%22%3A%22QmNmBt6zrFzsYEsuLz8vGU6oqrZndbcGbZwzxLHofXSBJ9%22%7D%7D"
-                width="468"
-                height="60"
-                scrolling="no"
-                frameborder="0"
-                style="border: 0;"
-                onload="window.addEventListener('message', function(ev) { 
+                width="468" height="60" scrolling="no" frameborder="0" style="border: 0;" onload="window.addEventListener('message', function(ev) { 
                     if (ev.data.hasOwnProperty('adexHeight') && ('https://viewm.moonicorn.network' === ev.origin)) {
                         for (let f of document.getElementsByTagName('iframe')) {	
                             if (f.contentWindow === ev.source) {
@@ -135,8 +145,7 @@
                             }
                         }	
                     }
-                }, false)"
-            ></iframe>
+                }, false)"></iframe>
         </section>
         <footer>
             <p class="copyright">© 2020 Todos os direitos reservados.</p>
@@ -150,6 +159,7 @@
         }
     </script>
 </body>
+
 </html>
 
 <!-- by zF4ke -->
