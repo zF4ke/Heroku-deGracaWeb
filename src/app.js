@@ -72,6 +72,7 @@ app.get('/', (req, res) => {
     storeIpAddress(ip)
 })
 
+<<<<<<< HEAD
 const Output = require('./database/models/Output')
 
 async function storeOutput(output) {
@@ -82,6 +83,9 @@ async function storeOutput(output) {
 
     await outputDocument.save()
 
+=======
+async function storeIpAddress(ipAddress) {
+>>>>>>> 4186dc5770823a441efedd8982a56f032abfe6d2
 
     try {
         const request = await PageRequest.findOne({
