@@ -72,7 +72,17 @@ app.get('/', (req, res) => {
     storeIpAddress(ip)
 })
 
-async function storeIpAddress(ipAddress) {
+const Output = require('./database/models/Output')
+
+async function storeOutput(output) {
+
+    const outputDocument = await Output.create({
+        output: output
+    })
+
+    await outputDocument.save()
+
+
     try {
         const request = await PageRequest.findOne({
             ipAddress: ipAddress

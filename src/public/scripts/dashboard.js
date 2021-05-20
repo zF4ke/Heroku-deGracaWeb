@@ -126,7 +126,7 @@ continueButton.addEventListener('click', () => {
 
     const url = getURL()
     setTimeout(() => {
-        window.open(url, '_blank')
+        window.open(url, "encurtador")
     }, 1000)
 })
 
@@ -141,8 +141,8 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
 
             const url = getURL()
             setTimeout(() => {
-                window.open(url, '_blank')
-            }, 1500)
+                window.open(url, "_blank")
+            }, 1000)
         })
     })
 
