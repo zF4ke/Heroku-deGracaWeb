@@ -39,8 +39,8 @@ app.use(session({
 }))
 
 
-app.enable('trust proxy') 
-app.set('view engine','ejs')
+app.enable('trust proxy')
+app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
 app.use(express.static(path.join(__dirname, 'public')))
 
@@ -72,26 +72,13 @@ app.get('/', (req, res) => {
     storeIpAddress(ip)
 })
 
-<<<<<<< HEAD
-const Output = require('./database/models/Output')
-
-async function storeOutput(output) {
-
-    const outputDocument = await Output.create({
-        output: output
-    })
-
-    await outputDocument.save()
-
-=======
 async function storeIpAddress(ipAddress) {
->>>>>>> 4186dc5770823a441efedd8982a56f032abfe6d2
 
     try {
         const request = await PageRequest.findOne({
             ipAddress: ipAddress
         })
-        if(request) {
+        if (request) {
             return
         } else {
             const newRequest = await PageRequest.create({
