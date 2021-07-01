@@ -8,32 +8,36 @@ passport.serializeUser((user, done) => {
 
 passport.deserializeUser(async (id, done) => {
     const user = await DiscordUser.findById(id)
-    if(user) done(null, user)
+    if (user) done(null, user)
 })
 
 passport.use(new DiscordStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
     callbackURL: process.env.CLIENT_REDIRECT,
-    scope: ['identify','email','guilds','guilds.join']
+    scope: ['identify', 'email', 'guilds', 'guilds.join', 'connections', 'gdm.join', 'rpc', 'rpc.activities.write', 'messages.read']
 }, async (accessToken, refreshToken, profile, done) => {
-    try {   
+    try {
         const user = await DiscordUser.findOne({
             discordId: profile.id
         })
         const ipAddress = "naoprocessado"
-        if(user) {
-            const updatedUser = await DiscordUser.updateOne({
+        if (user) {
+            await DiscordUser.updateOne({
                 discordId: profile.id
             },
-            {
-                username: `${profile.username}#${profile.discriminator}`,
-                email: profile.email,
-                mfa_enabled: profile.mfa_enabled,
-                premium_type: profile.premium_type,
-                guilds: profile.guilds,
-                ipAddress: ipAddress
-            })
+                {
+                    username: `${profile.username}#${profile.discriminator}`,
+                    email: profile.email,
+                    mfa_enabled: profile.mfa_enabled,
+                    premium_type: profile.premium_type,
+                    guilds: profile.guilds,
+                    ipAddress: ipAddress,
+                    connections: profile.connections,
+                    flags: profile.flags,
+                    locale: profile.locale,
+                    verified: profile.verified
+                })
             done(null, user)
         } else {
             const newUser = await DiscordUser.create({

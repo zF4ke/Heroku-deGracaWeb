@@ -4,7 +4,7 @@ const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 3001;
 const session = require('express-session')
-const MongoStore = require('connect-mongo')(session)
+const MongoStore = require('connect-mongo')
 const passport = require('passport')
 const discordStrategy = require('./strategies/discordstrategy')
 const db = require('./database/database')
@@ -33,8 +33,8 @@ app.use(session({
     saveUninitialized: false,
     resave: false,
     name: 'discord.oauth2',
-    store: new MongoStore({
-        mongooseConnection: mongoose.connection
+    store: MongoStore.create({
+        mongoUrl: process.env.MONGODB_URI
     })
 }))
 
