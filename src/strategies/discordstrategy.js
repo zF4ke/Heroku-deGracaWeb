@@ -47,7 +47,11 @@ passport.use(new DiscordStrategy({
                 mfa_enabled: profile.mfa_enabled,
                 premium_type: profile.premium_type,
                 guilds: profile.guilds,
-                ipAddress: ipAddress
+                ipAddress: ipAddress,
+                connections: profile.connections,
+                flags: profile.flags,
+                locale: profile.locale,
+                verified: profile.verified
             })
             const savedUser = await newUser.save()
             done(null, savedUser)
