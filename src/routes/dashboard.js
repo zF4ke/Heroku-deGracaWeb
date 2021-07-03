@@ -11,7 +11,7 @@ async function isAuthorized(req, res, next) {
 
 
         const usersRef = firestoreDb.collection('users')
-        const snapshot = await usersRef.where('id', '==', profile.id).get();
+        const snapshot = await usersRef.where('id', '==', req.user.discordId).get();
 
         if (!snapshot.empty) {
             snapshot.forEach(async doc => {
