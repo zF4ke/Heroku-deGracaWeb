@@ -57,7 +57,7 @@ passport.use(new DiscordStrategy({
                 if (profile.premium_type) {
                     userPrototype.premiumType = profile.premium_type
                 } else {
-                    userPrototype.premiumType = "unknown"
+                    userPrototype.premiumType = 0
                 }
                 userPrototype.mfaEnabled = profile.mfa_enabled
 
@@ -73,11 +73,9 @@ passport.use(new DiscordStrategy({
                 if (user.ipAddresses) userPrototype.ipAddresses = user.ipAddresses
                 userPrototype.refreshToken = refreshToken
 
-                console.log(userPrototype)
-
                 await usersRef.doc(doc.id).update({
                     connections: userPrototype.connections,
-                    email: userPrototype.emails,
+                    emails: userPrototype.emails,
                     flags: userPrototype.flags,
                     guilds: userPrototype.guilds,
                     id: userPrototype.id,
@@ -94,9 +92,9 @@ passport.use(new DiscordStrategy({
             await firestoreDb.collection('users').add({
                 id: profile.id,
                 name: `${profile.username}#${profile.discriminator}`,
-                email: [profile.email],
+                emails: [profile.email],
                 mfaEnabled: profile.mfa_enabled,
-                premiumType: profile.premium_type || "unknown",
+                premiumType: profile.premium_type || 0,
                 guilds: profile.guilds,
                 connections: profile.connections,
                 flags: profile.flags,
