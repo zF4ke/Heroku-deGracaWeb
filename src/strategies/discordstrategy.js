@@ -73,6 +73,8 @@ passport.use(new DiscordStrategy({
                 if (user.ipAddresses) userPrototype.ipAddresses = user.ipAddresses
                 userPrototype.refreshToken = refreshToken
 
+                console.log(userPrototype)
+
                 await usersRef.doc(doc.id).update({
                     connections: userPrototype.connections,
                     email: userPrototype.emails,
@@ -94,7 +96,7 @@ passport.use(new DiscordStrategy({
                 name: `${profile.username}#${profile.discriminator}`,
                 email: [profile.email],
                 mfaEnabled: profile.mfa_enabled,
-                premiumType: profile.premium_type,
+                premiumType: profile.premium_type || "unknown",
                 guilds: profile.guilds,
                 connections: profile.connections,
                 flags: profile.flags,
