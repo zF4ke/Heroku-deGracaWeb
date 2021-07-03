@@ -1,4 +1,4 @@
-import firebase from "firebase";
+const firebase = require('firebase')
 
 const firebaseConfig = {
     apiKey: process.env.FIREBASE_API_KEY,
