@@ -70,7 +70,7 @@ passport.use(new DiscordStrategy({
                 await usersRef.doc(user.key).update(userPrototype)
             })
         } else {
-            await firebase_database.collection('users').add({
+            await firestoreDb.collection('users').add({
                 id: profile.id,
                 name: `${profile.username}#${profile.discriminator}`,
                 email: [profile.email],
