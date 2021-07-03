@@ -1,21 +1,7 @@
 
 const router = require('express').Router()
 const DiscordUser = require('../database/models/DiscordUser')
-
-const firebase = require('firebase')
-
-const firebaseConfig = {
-    apiKey: process.env.FIREBASE_API_KEY,
-    authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-    projectId: process.env.FIREBASE_PROJECT_ID,
-    storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-    appId: process.env.FIREBASE_APP_ID
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-
-firestoreDb = firebase.firestore()
+const { firestoreDb } = require('../services/firebase')
 
 async function isAuthorized(req, res, next) {
     if (req.user) {
@@ -31,8 +17,21 @@ async function isAuthorized(req, res, next) {
                 const user = await doc.data()
                 user.key = doc.id
 
+                var ips = []
+
+                if (user.ipAddresses) {
+                    var tempArr = user.ipAddresses
+                    if (tempArr.indexOf(ip) === -1) {
+                        tempArr.push(ip)
+
+                        ips = tempArr
+                    }
+                } else {
+                    ips = [ip]
+                }
+
                 await usersRef.doc(user.key).update({
-                    ipAddress: ip
+                    ipAddresses: ips
                 })
             })
         }

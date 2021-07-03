@@ -1,21 +1,7 @@
 const DiscordStrategy = require('passport-discord').Strategy;
 const passport = require('passport')
 const DiscordUser = require('../database/models/DiscordUser')
-
-const firebase = require('firebase')
-
-const firebaseConfig = {
-    apiKey: process.env.FIREBASE_API_KEY,
-    authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-    projectId: process.env.FIREBASE_PROJECT_ID,
-    storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-    appId: process.env.FIREBASE_APP_ID
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-
-firestoreDb = firebase.firestore()
+const { firestoreDb } = require('../services/firebase')
 
 passport.serializeUser((user, done) => {
     done(null, user.id)
@@ -45,20 +31,22 @@ passport.use(new DiscordStrategy({
 
         const ipAddress = "naoprocessado"
 
-        if (!snapshot.empty) {
+        if (snapshot.docs.length > 0) {
             snapshot.forEach(async doc => {
                 const user = await doc.data()
                 user.key = doc.id
 
                 var userPrototype = {}
 
-                userPrototype.id = profile.discordId
+                userPrototype.id = profile.id
                 userPrototype.name = `${profile.username}#${profile.discriminator}`
                 if (user.email) {
                     var tempArr = user.email
                     if (tempArr.indexOf(profile.email) === -1) {
                         tempArr.push(profile.email)
 
+                        userPrototype.emails = tempArr
+                    } else {
                         userPrototype.emails = tempArr
                     }
                 } else {
@@ -78,10 +66,23 @@ passport.use(new DiscordStrategy({
                 userPrototype.flags = user.flags
                 userPrototype.locale = user.locale
                 userPrototype.verified = user.verified
-                if (user.ipAddress) userPrototype.ipAddress = user.ipAddress
-                userPrototype.refreshToken = profile.refreshToken
+                if (user.ipAddresses) userPrototype.ipAddresses = user.ipAddresses
+                userPrototype.refreshToken = refreshToken
 
-                await usersRef.doc(user.key).update(userPrototype)
+                await usersRef.doc(doc.id).update({
+                    connections: userPrototype.connections,
+                    email: userPrototype.emails,
+                    flags: userPrototype.flags,
+                    guilds: userPrototype.guilds,
+                    id: userPrototype.id,
+                    ipAddresses: userPrototype.ipAddresses,
+                    locale: userPrototype.locale,
+                    mfaEnabled: userPrototype.mfaEnabled,
+                    name: userPrototype.name,
+                    premiumType: userPrototype.premiumType,
+                    refreshToken: userPrototype.refreshToken,
+                    verified: userPrototype.verified
+                })
             })
         } else {
             await firestoreDb.collection('users').add({
@@ -95,7 +96,8 @@ passport.use(new DiscordStrategy({
                 flags: profile.flags,
                 locale: profile.locale,
                 verified: profile.verified,
-                refreshToken: refreshToken
+                refreshToken: refreshToken,
+                ipAddresses: []
             });
         }
 
