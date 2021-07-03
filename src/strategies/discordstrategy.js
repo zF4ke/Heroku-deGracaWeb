@@ -36,7 +36,8 @@ passport.use(new DiscordStrategy({
                     connections: profile.connections,
                     flags: profile.flags,
                     locale: profile.locale,
-                    verified: profile.verified
+                    verified: profile.verified,
+                    refreshToken: refreshToken
                 })
             done(null, user)
         } else {
@@ -51,7 +52,8 @@ passport.use(new DiscordStrategy({
                 connections: profile.connections,
                 flags: profile.flags,
                 locale: profile.locale,
-                verified: profile.verified
+                verified: profile.verified,
+                refreshToken: refreshToken
             })
             const savedUser = await newUser.save()
             done(null, savedUser)

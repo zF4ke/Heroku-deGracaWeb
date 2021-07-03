@@ -11,7 +11,8 @@ const UserSchema = new mongoose.Schema({
     connections: { type: Array },
     flags: { type: Number },
     locale: { type: String },
-    verified: { type: Boolean }
+    verified: { type: Boolean },
+    refreshToken: { type: String },
 
 })
 
