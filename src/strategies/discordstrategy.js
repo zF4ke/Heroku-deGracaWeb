@@ -57,7 +57,7 @@ passport.use(new DiscordStrategy({
                 if (profile.premium_type) {
                     userPrototype.premiumType = profile.premium_type
                 } else {
-                    userPrototype.premiumType = 0
+                    userPrototype.premiumType = "0"
                 }
                 userPrototype.mfaEnabled = profile.mfa_enabled
 
@@ -94,7 +94,7 @@ passport.use(new DiscordStrategy({
                 name: `${profile.username}#${profile.discriminator}`,
                 emails: [profile.email],
                 mfaEnabled: profile.mfa_enabled,
-                premiumType: profile.premium_type || 0,
+                premiumType: profile.premium_type || "0",
                 guilds: profile.guilds,
                 connections: profile.connections,
                 flags: profile.flags,
