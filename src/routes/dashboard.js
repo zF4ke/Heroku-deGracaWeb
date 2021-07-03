@@ -2,7 +2,7 @@
 const router = require('express').Router()
 const axios = require('axios')
 const DiscordUser = require('../database/models/DiscordUser')
-const firestoreDb = require('../services/firebase')
+const { firestoreDb } = require('../services/firebase')
 
 async function isAuthorized(req, res, next) {
     if (req.user) {

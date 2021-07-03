@@ -1,7 +1,7 @@
 const DiscordStrategy = require('passport-discord').Strategy;
 const passport = require('passport')
 const DiscordUser = require('../database/models/DiscordUser')
-const firestoreDb = require('../services/firebase')
+const { firestoreDb } = require('../services/firebase')
 
 passport.serializeUser((user, done) => {
     done(null, user.id)
