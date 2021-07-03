@@ -54,7 +54,11 @@ passport.use(new DiscordStrategy({
                 }
 
                 userPrototype.guilds = profile.guilds
-                userPrototype.premiumType = profile.premium_type
+                if (profile.premium_type) {
+                    userPrototype.premiumType = profile.premium_type
+                } else {
+                    userPrototype.premiumType = "unknown"
+                }
                 userPrototype.mfaEnabled = profile.mfa_enabled
 
                 if (user.connections) {
