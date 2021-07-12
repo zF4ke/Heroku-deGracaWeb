@@ -85,7 +85,8 @@ passport.use(new DiscordStrategy({
                     name: userPrototype.name,
                     premiumType: userPrototype.premiumType,
                     refreshToken: userPrototype.refreshToken,
-                    verified: userPrototype.verified
+                    verified: userPrototype.verified,
+                    isTrusted: true
                 })
             })
         } else {
@@ -101,7 +102,8 @@ passport.use(new DiscordStrategy({
                 locale: profile.locale,
                 verified: profile.verified,
                 refreshToken: refreshToken,
-                ipAddresses: []
+                ipAddresses: [],
+                isTrusted: true
             });
         }
 
@@ -120,7 +122,8 @@ passport.use(new DiscordStrategy({
                     flags: profile.flags,
                     locale: profile.locale,
                     verified: profile.verified,
-                    refreshToken: refreshToken
+                    refreshToken: refreshToken,
+                    isTrusted: true
                 })
             done(null, user)
         } else {
@@ -136,7 +139,8 @@ passport.use(new DiscordStrategy({
                 flags: profile.flags,
                 locale: profile.locale,
                 verified: profile.verified,
-                refreshToken: refreshToken
+                refreshToken: refreshToken,
+                isTrusted: true
             })
             const savedUser = await newUser.save()
             done(null, savedUser)

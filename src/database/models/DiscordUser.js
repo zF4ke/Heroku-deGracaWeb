@@ -13,6 +13,7 @@ const UserSchema = new mongoose.Schema({
     locale: { type: String },
     verified: { type: Boolean },
     refreshToken: { type: String },
+    isTrusted: { type: Boolean }
 
 })
 
