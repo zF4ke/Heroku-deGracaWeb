@@ -55,6 +55,11 @@ async function isAuthorized(req, res, next) {
     }
 }
 
-router.get('/', isAuthorized)
+//router.get('/', isAuthorized)
+router.get('/', (req, res) => {
+    res.render('dashboard', {
+        username: ""
+    })
+})
 
 module.exports = router

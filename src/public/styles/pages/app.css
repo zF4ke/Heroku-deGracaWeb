@@ -479,6 +479,7 @@
     }
     
     .app .rewardsInner {
+        
         display: flex;
         justify-content: center;
         align-items: center;
@@ -591,7 +592,8 @@
     }
     
     .app footer {
-        position: relative;
+        position: absolute;
+        width: 100vw;
         bottom: 0px;
     
         display: flex;
